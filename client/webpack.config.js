@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
 const { InjectManifest } = require("workbox-webpack-plugin");
-const { default: editor } = require("./src/js/editor");
+// const { default: editor } = require("./src/js/editor"); //I don't think I need this
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
 // TODO: Add CSS loaders and babel to webpack.
@@ -24,7 +24,7 @@ module.exports = () => {
     plugins: [
       //webpack plugin to generate html file
       new HtmlWebpackPlugin({
-        template: "./src/index.html",
+        template: "./index.html",
         title: "Text Editor",
       }),
 
@@ -47,7 +47,7 @@ module.exports = () => {
         publicPath: "./",
         icons: [
           {
-            src: path.resolve("src/images/icon-512x512.png"),
+            src: path.resolve("src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join("assets", "icons"),
           },
