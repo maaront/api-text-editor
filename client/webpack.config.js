@@ -34,8 +34,25 @@ module.exports = () => {
         swDest: 'src-sw.js',
       }),
       
-      
-
+      // create manifest file
+      new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: 'Text Editor',
+        short_name: 'Editor',
+        description: 'A simple text editor',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
+        start_url: '/',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/icon-512x512.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      }),
     ],
 
     module: {
