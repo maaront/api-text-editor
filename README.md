@@ -13,7 +13,7 @@ JATE is a browser-based text editor built as a Progressive Web Application (PWA)
 4. Start the application: `npm start`
 
 ## Usage
-1. Visit the deployed application at: `https://pwa-text-editor-mt-1398e0ab9943.herokuapp.com/`
+1. Visit the deployed application at: [https://pwa-text-editor-mt-1398e0ab9943.herokuapp.com/]([url](https://pwa-text-editor-mt-1398e0ab9943.herokuapp.com/))
 2. On the homepage, the text editor is ready for you to start typing.
 3. The text you type is automatically saved in the browser.
 4. Even if you go offline or refresh the page, your text will still be there when you come back.
