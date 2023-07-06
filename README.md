@@ -3,7 +3,8 @@
 ## Description
 JATE is a browser-based text editor built as a Progressive Web Application (PWA). It serves as a reliable, fast, and engaging tool to create, edit, and save text documents directly in your browser. With its offline functionality and various data persistence techniques, it offers a seamless experience for users. JATE uses JavaScript for client-side logic, the idb package for IndexedDB interaction, and CodeMirror for the text editor view.
 
-<img width="1209" alt="Screenshot of JATE" src="https://github.com/yourusername/jate/assets/images/screenshot.png">
+<img width="952" alt="Screenshot of JATE" src="https://github.com/maaront/api-text-editor/assets/35611834/3b0ed5cc-61c5-4e1a-96b5-de623a89a046">
+
 
 ## Local Installation
 1. If you'd like to run JATE locally, clone the repository: `git clone https://github.com/maaront/api-text-editor`
