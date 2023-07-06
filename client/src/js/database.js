@@ -15,21 +15,21 @@ const initdb = async () =>
 
 // TODO: Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
-  console.log('1');
+  
   // Open the db
   const db = await openDB("jate", 1);
-  console.log('2');
+  
   // Create a transaction
   const tx = db.transaction("jate", "readwrite");
-  console.log('3');
+  
   // Get the object store
   const store = tx.objectStore("jate");
-  console.log('4');
-  const request = await store.add ({content: content})
-  console.log('5');
+  
+  const request = store.add ({content: content})
+  
   // Add the content to the object store
   const result = await request;
-  console.log('5');
+  
   
   console.log('Content added to jate database:', result);
 };
@@ -37,15 +37,22 @@ export const putDb = async (content) => {
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
   // Open the db
-  const db = await initdb();
+  const db = await openDB('jate', 1);
   // Create a transaction
   const tx = db.transaction("jate", "readonly");
   // Get the object store
   const store = tx.objectStore("jate");
-  // Get all the content in the store
-  const content = await store.getAll();
-  console.log("Content fetched from jate database");
-  return content;
+
+  // Use get.All() to get all the content from the object store
+  // This is an array of objects, not an array of strings
+  const request = store.getAll();
+
+  // Get confirmation of the request
+  const result = await request;
+  console.log('Content fetched from jate database', result);
+
+  // Return the content property of the last object in the result array
+  return result[result.length - 1].content;
 };
 
 initdb();

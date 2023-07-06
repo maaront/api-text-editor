@@ -27,7 +27,9 @@ export default class {
     getDb().then((data) => {
       console.log('Type of data:', typeof data);
       console.info('Loaded data from IndexedDB, injecting into editor');
+      console.log('Get DB', { data, localData, header, arg: data || localData || header });
       this.editor.setValue(data || localData || header);
+      console.log('Should not see');
     }).catch((error) => { // if there's an error, log it
       console.error('Error retrieving data from DB:', error);
     });
